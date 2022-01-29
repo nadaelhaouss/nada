@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Covid 19, ​Nombre de cas quotidiens de Covid-19 dans la région de Rabat-Salé-Kénitr​a, province par province&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;du 23 Décembre 2021 au 30 Décembre 2021">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Home</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Home.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 4.3.3, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/Logo_iav.png"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+  </head>
+  <body data-home-page="Home.html" data-home-page-title="Home" class="u-body"><header class="u-clearfix u-header u-header" id="sec-eca7"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="243" data-image-height="235">
+          <img src="images/Logo_iav.png" class="u-logo-image u-logo-image-1">
+        </a>
+        <img class="u-image u-image-default u-preserve-proportions u-image-2" src="images/logo_esgt.png" alt="" data-image-width="225" data-image-height="224">
+        <h1 class="u-text u-text-palette-1-base u-text-1">Covid 19</h1>
+      </div></header>
+    <section class="u-clearfix u-palette-1-base u-section-1" id="carousel_8d61">
+      <div class="u-align-left u-clearfix u-sheet u-sheet-1"></div>
+    </section>
+    <section class="u-clearfix u-section-2" id="sec-5223">
+      <div class="u-align-left u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h1 class="u-text u-text-1"> Nombre de cas quotidiens de Covid-19 dans la région de Rabat-Salé-Kénitr​a, province par province<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;du 23 Décembre 2021 au 30 Décembre 2021
+        </h1>
+      </div>
+    </section>
+    <!DOCTYPE html>
+    <meta charset="utf-8">
+    <title>carte COVID</title>
+    <style>
+      .Nom_Provin-border {
+        fill: none;
+        stroke: rgb(248, 245, 245);
+        stroke-opacity: 1;
+        stroke-width: 1;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        pointer-events: none;
+      }
+      .axis text {
+        font: 10px sans-serif;
+      }
+    
+      .axis line, .axis path {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+      }
+    </style>
+    <html>
+      <body>
+        <input id="slider" type="range" min= "23" max= "30" value="23" step="1" />
+        
+    
+        <span id="range">23</span>
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script src="https://d3js.org/topojson.v1.min.js"></script>
+        <script src="https://raw.github.com/fryn/html5slider/master/html5slider.js"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.13.0/d3-legend.min.js"></script>
+        <script type="text/javascript">
+        
+          
+    //la fonction qui renvoie la valeur des cas contaminés d'un jour (range pr detereminer le jour et id pour determiner province)
+      
+    onload = function() {
+      var $ = function(id) { return document.getElementById(id); };
+      $('slider').oninput = function() { $('range').innerHTML = this.value; };
+      $('slider').oninput();
+    };
+    
+      </script>
+        décembre 2021
+          <script>
+                  
+            //choropleth
+            var width = 800, height = 400;
+      
+            var value;
+            
+            // changer le type de scale (graduated colors)
+            var color = d3.scale.quantize().domain([0,200]).range(["#b6c5d7","#6c8fb1" , "#44759e","#005c8b","#143e5b","#142f44","#13222f"]);
+      
+            //Changer la projection
+            var projection = d3.geo.conicConformal().parallels([-90 + 00 / 60, 90 + 00 / 60]).rotate([-05 + 24 / 60, 0 + 0 / 60]).translate([width / 2, height / 2]);
+      
+            var path = d3.geo.path().projection(projection);
+      
+            var svg = d3.select("body").append("svg").attr("width", width).attr("height", height);
+            
+      
+            d3.json("provinces.json", function(error, ok) {
+              var provincesnew = topojson.feature(ok, ok.objects.provincesnew);
+      
+              projection.scale(1).translate([0, 0]);
+      
+              var b = path.bounds(provincesnew), s = .95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height), t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+      
+              projection.scale(s).translate(t);
+      
+              svg.selectAll("path").data(provincesnew.features.filter(function(d) {
+                return d.id;
+              })).enter().append("path").attr("class", "Nom_Provin").attr("d", path).style("fill", function(d) {
+                return color(d.properties.dec23);
+              }).append("title").text(function(d) {
+                return " Province de " + d.properties.Nom_Provin ;
+              });
+      
+              svg.append("path").datum(topojson.mesh(ok, ok.objects.provincesnew, function(a, b) {
+                return a !== b;
+              })).attr("class", "Nom_Provin-border").attr("d", path);
+      
+              d3.selectAll("input").on("change", function change() {
+                var value = this.value;
+      
+                d3.selectAll("path").style("fill", function(d) {
+                  switch (value) {
+                    case "23":
+                      return color(d.properties.dec23);
+                      break;
+                    case "24":
+                      return color(d.properties.dec24);
+                      break;
+                    case "25":
+                      return color(d.properties.dec25);
+                      break;
+                    case "26":
+                      return color(d.properties.dec26);
+                      break;
+                    case "27":
+                      return color(d.properties.dec27);
+                      break;
+                    case "28":
+                      return color(d.properties.dec28);
+                      break;
+                    case "29":
+                      return color(d.properties.dec29);
+                      break;
+                    case "30":
+                      return color(d.properties.dec30);
+                      break;
+                  }
+                });
+              });
+      
+            });
+            //end choropleth
+            
+            //key
+            
+            var svg = d3.select("svg");
+            // LINEAR
+            var quantize = d3.scale.quantize()
+                      .domain([0,200])
+                      .range(["#b6c5d7","#6c8fb1" , "#44759e","#005c8b","#143e5b","#142f44","#13222f"]);
+            svg.append("g")
+              .attr("class", "legendQuant")
+              .attr("transform", "translate(650,200)");
+            
+            var legendV = d3.legend.color()
+                        .shapeWidth(10)
+                        .cells(5)
+                        .title("Cas contaminés")
+                        .labelFormat(d3.format('.0f'))
+                        .scale(quantize);
+            svg.select(".legendQuant")
+              .call(legendV);
+      
+                d3.select(self.frameElement).style("height", height + "px");
+            
+          </script>
+    
+      </body>
+    </html>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-c5db"><div class="u-align-left u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-text u-text-default u-text-1">El Haouss Nada N°18</h3>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+    </section>
+  </body>
+</html>
