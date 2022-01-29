@@ -96,7 +96,7 @@
             var value;
             
             // changer le type de scale (graduated colors)
-            var color = d3.scale.quantize().domain([0,200]).range(["#b6c5d7","#6c8fb1" , "#44759e","#005c8b","#143e5b","#142f44","#13222f"]);
+            var color = d3.scale.quantize().domain([0,180]).range(["#b6c5d7", "#44759e","#005c8b","#143e5b","#142f44","#13222f"]);
       
             //Changer la projection
             var projection = d3.geo.conicConformal().parallels([-90 + 00 / 60, 90 + 00 / 60]).rotate([-05 + 24 / 60, 0 + 0 / 60]).translate([width / 2, height / 2]);
@@ -168,8 +168,8 @@
             var svg = d3.select("svg");
             // LINEAR
             var quantize = d3.scale.quantize()
-                      .domain([0,200])
-                      .range(["#b6c5d7","#6c8fb1" , "#44759e","#005c8b","#143e5b","#142f44","#13222f"]);
+                      .domain([0,180])
+                      .range(["#b6c5d7", "#44759e","#005c8b","#143e5b","#142f44","#13222f"]);
             svg.append("g")
               .attr("class", "legendQuant")
               .attr("transform", "translate(650,200)");
