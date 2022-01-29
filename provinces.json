@@ -14,7 +14,7 @@
 									]
 								],
 								"id": "1",
-								"properties": {"FID":0,"OBJECTID":26,"Nom_Provin":"KENITRA","dec30":41,"dec29":36,"dec28":20,"dec27":12,"dec26":5,"dec25":15,"dec24":11,"dec23":21
+								"properties": {"FID":0,"OBJECTID":26,"Nom_Provin":"KENITRA","dec30":4,"dec29":3,"dec28":2,"dec27":1,"dec26":0,"dec25":1,"dec24":1,"dec23":2
 								}
 							}, {
 								"type": "MultiPolygon",
@@ -22,8 +22,7 @@
 									]
 								],
 								"id": "2",
-								"properties": {"FID":1,"OBJECTID":27,"Nom_Provin":"KHEMISSET","dec30":7,"dec29":1,"dec28":1,"dec27":1,"dec26":0,"dec25":1,"dec24":5, 
-								"dec23":0
+								"properties": {"FID":1,"OBJECTID":27,"Nom_Provin":"KHEMISSET","dec30":1,"dec29":0,"dec28":0,"dec27":0,"dec26":0,"dec25":0,"dec24":1,"dec23":0
 								}
 							}, {
 								"type": "MultiPolygon",
@@ -31,7 +30,7 @@
 									]
 								],
 								"id": "3",
-								"properties": {"FID":2,"OBJECTID":28,"Nom_Provin":"RABAT","dec30":64,"dec29":75,"dec28":35,"dec27":53,"dec26":61,"dec25":47,"dec24":47,"dec23":32
+								"properties": {"FID":2,"OBJECTID":28,"Nom_Provin":"RABAT","dec30":11,"dec29":13,"dec28":6,"dec27":9,"dec26":11,"dec25":8,"dec24":8,"dec23":6
 								}
 							}, {
 								"type": "MultiPolygon",
@@ -39,7 +38,7 @@
 									]
 								],
 								"id": "4",
-								"properties": {"FID":3,"OBJECTID":29,"Nom_Provin":"SALE","dec30":102,"dec29":86,"dec28":43,"dec27":39,"dec26":12,"dec25":55,"dec24":39,"dec23":20
+								"properties": {"FID":3,"OBJECTID":29,"Nom_Provin":"SALE","dec30":10,"dec29":9,"dec28":4,"dec27":4,"dec26":1,"dec25":6,"dec24":4,"dec23":2
 								}
 							}, {
 								"type": "MultiPolygon",
@@ -47,8 +46,7 @@
 									]
 								],
 								"id": "5",
-								"properties": {"FID":4,"OBJECTID":30,"Nom_Provin":"SIDI KACEM","dec30":6,"dec29":2,"dec28":3,"dec27":1,"dec26":1,"dec25":2,"dec24":0,
-								"dec23":1
+								"properties": {"FID":4,"OBJECTID":30,"Nom_Provin":"SIDI KACEM","dec30":1,"dec29":6,"dec28":1,"dec27":0,"dec26":0,"dec25":0,"dec24":0,"dec23":0
 								}
 							}, {
 								"type": "MultiPolygon",
@@ -56,8 +54,7 @@
 									]
 								],
 								"id": "6",
-								"properties": {"FID":5,"OBJECTID":31,"Nom_Provin":"Sidi Slimane","dec30":3,"dec29":1,"dec28":3,"dec27":0,"dec26":0,"dec25":2,"dec24":1, 
-								"dec23":1
+								"properties": {"FID":5,"OBJECTID":31,"Nom_Provin":"Sidi Slimane","dec30":1,"dec29":0,"dec28":1,"dec27":0,"dec26":0,"dec25":1,"dec24":0,"dec23":0
 								}
 							}, {
 								"type": "MultiPolygon",
@@ -65,7 +62,7 @@
 										]
 									],
 								"id": "7",
-								"properties": {"FID":6,"OBJECTID":32,"Nom_Provin":"SKHIRATE-TEMARA","dec30":166,"dec29":100,"dec28":90,"dec27":14,"dec26":39,"dec25":43,"dec24":60,"dec23":50
+								"properties": {"FID":6,"OBJECTID":32,"Nom_Provin":"SKHIRATE-TEMARA","dec30":29,"dec29":17,"dec28":16,"dec27":2,"dec26":7,"dec25":7,"dec24":10,"dec23":9
 									}
 				}
 			]
