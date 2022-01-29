@@ -27,7 +27,7 @@
     <meta property="og:type" content="website">
   </head>
   <body data-home-page="Home.html" data-home-page-title="Home" class="u-body"><header class="u-clearfix u-header u-header" id="sec-eca7"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="243" data-image-height="235">
+        <a  class="u-image u-logo u-image-1" data-image-width="243" data-image-height="235">
           <img src="images/Logo_iav.png" class="u-logo-image u-logo-image-1">
         </a>
         <img class="u-image u-image-default u-preserve-proportions u-image-2" src="images/logo_esgt.png" alt="" data-image-width="225" data-image-height="224">
@@ -96,7 +96,7 @@
             var value;
             
             // changer le type de scale (graduated colors)
-            var color = d3.scale.quantize().domain([0,180]).range(["#b6c5d7", "#44759e","#005c8b","#143e5b","#142f44","#13222f"]);
+            var color = d3.scale.quantize().domain([0,30]).range(["#b6c5d7","#6c8fb1" , "#44759e","#005c8b","#143e5b","#142f44"]);
       
             //Changer la projection
             var projection = d3.geo.conicConformal().parallels([-90 + 00 / 60, 90 + 00 / 60]).rotate([-05 + 24 / 60, 0 + 0 / 60]).translate([width / 2, height / 2]);
@@ -168,16 +168,17 @@
             var svg = d3.select("svg");
             // LINEAR
             var quantize = d3.scale.quantize()
-                      .domain([0,180])
-                      .range(["#b6c5d7", "#44759e","#005c8b","#143e5b","#142f44","#13222f"]);
+                      .domain([0,30])
+                      .range(["#b6c5d7","#6c8fb1" , "#44759e","#005c8b","#143e5b","#142f44"]);
+
             svg.append("g")
               .attr("class", "legendQuant")
-              .attr("transform", "translate(650,200)");
+              .attr("transform", "translate(570,200)");
             
             var legendV = d3.legend.color()
                         .shapeWidth(10)
-                        .cells(5)
-                        .title("Cas contaminés")
+                        .cells(500)
+                        .title("Cas contaminés/ 100 000 hab")
                         .labelFormat(d3.format('.0f'))
                         .scale(quantize);
             svg.select(".legendQuant")
